@@ -1,0 +1,166 @@
+﻿
+@{
+    ViewBag.Title = "AddEmployee";
+    Layout = "~/Views/Shared/_AdminTemplate.cshtml";
+}
+
+<h2 align="center">Add Employee</h2>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddEmployee</title>
+
+    @*<script src="~/Scripts/jquery-1.10.2.js"></script>*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            padding-top: .5em;
+            padding-bottom: .5em;
+        }
+    </style>
+
+    <script>
+        jQuery.validator.addMethod("lettersonly", function (value) { return /^[a-zA-Z]*$/i.test(value); });
+        jQuery.validator.addMethod("UnameValid", function (value) { return /^([\w-\.]+@@([\w-]+\.)+[\w-])?$/i.test(value); });
+          jQuery.validator.addMethod("domain", function (
+   value, element) {
+
+            return this.optional(element) || ['tms.com'].indexOf(value.split('@@').pop()) != -1;
+          });
+          jQuery.validator.addMethod("mailformat", function (value) { return /^([a-zA-Z0-9_])+\@@(([a-zA-Z0-9]{2,5})+\.)+([a-zA-Z]{3,4})+$/.test(value); });
+
+
+
+
+        $(document).on('keydown', '#txtPassword', function (e) {
+            if (e.keyCode == 32) return false;
+        });
+        $(document).ready(function () {
+            $("#Admin").validate({
+                rules: {
+                    txtUserName:
+                        {
+                            required: true,
+                           mailformat:true,
+                            minlength: 7,
+                            maxlength: 20,
+                            domain:true,
+
+                        },
+
+
+                    txtPassword:
+                       {
+                           required: true,
+                           pwcheck: true,
+                           minlength: 6,
+                           maxlength: 14
+
+                       },
+
+                    txtDesignation:
+                        {
+
+                            required: true,
+                        },
+                    txtManagerID:
+                        {
+                            required:true,
+                        },
+
+                },
+                messages: {
+                    txtUserName:
+                        {
+                            required: "Please enter Employee username",
+                            mailformat:"Please enter valid email ",
+                            minlength: "Minimum seven characters needed",
+                            maxlength: "Should not exceed twenty characters",
+                            domain:"Format is Name@tms.com",
+                        },
+
+                    txtPassword:
+                        {
+                            required: "Please enter Password",
+                            minlength: "Minimum Six characters needed",
+                            maxlength: "Can't exceed Fourteen characters",
+                            pwcheck:"One Uppercase,special character,number is must"
+
+                        },
+                    txtDesignation:
+                        {
+                            required: "Please enter Designation",
+                        },
+                    txtManagerID:
+                    {
+                        required:"Please enter ManagerID",
+                    },
+               },
+
+            });
+        });
+
+        $.validator.addMethod("pwcheck", function(value) {
+            return /^(?=.*[A-Z])(?=.*\d)(?=.*[$@@$!%*?&])[A-Za-z\d$@@$!%*?&]/.test(value)
+       && /[A-Z]/.test(value)
+       && /\d/.test(value)
+
+
+
+});
+    </script>
+
+
+
+
+
+</head>
+<body>
+    
+    @using (Html.BeginForm("AddEmployee", "Admin", FormMethod.Post, new { @id = "Admin" }))
+    {
+        @*<div align="right"><input type="submit" value="SignOut" name="btn" formnovalidate="formnovalidate" /></div>*@
+        <table style="margin-left:500px">
+            <tr>
+                <td>User Name*&nbsp;&nbsp;</td>
+                <td>@Html.TextBox("txtUserName", null, new { @class = "text-primary" })</td>
+            </tr>
+            <tr>
+                <td>Password*&nbsp;&nbsp;</td>
+                <td>@Html.TextBox("txtPassword", null, new { @class = "text-primary" })</td>
+            </tr>
+            @*<tr>
+                    <td>@Html.Label("Designation")</td>
+                    <td>@Html.TextBox("txtDesignation")</td>
+                </tr>*@
+
+            <tr>
+                <td>Manager ID:&nbsp;&nbsp;</td>
+                <td>MGR @Html.DropDownList("txtManagerID", ViewData["ManagerDDL"] as List<SelectListItem>, new { style = "width:136px;", @class = "text-primary" })  </td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="ADD" name="btn" class="btn btn-primary my-btn" /></td>
+                <td><p style="color:red">@ViewData["alertEmployee"]</p></td>
+            </tr>
+            <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+        </table>
+    }
+
+
+    <div>
+    </div>
+</body>
+</html>
+
+

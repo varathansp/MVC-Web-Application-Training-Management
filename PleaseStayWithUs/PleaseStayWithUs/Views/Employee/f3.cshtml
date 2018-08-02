@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "GiveFeedback";
+    Layout = null;
+}
+
+<h2>GiveFeedback</h2>
+
+<p align="center">@ViewData["aa"]</p>
+ @Session["CourseID"] 
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script>
+
+        jQuery(document).ready(function () {
+            $("#surveyForm").validate({
+                rules: {
+                    rdo1: {
+                        required: true
+                    },
+
+                    rdo2: {
+                        required: true
+                    },
+
+                    rdo3: {
+                        required: true
+                    },
+
+                    rdo4: {
+                        required: true
+                    },
+
+                    rdo5: {
+                        required: true
+                    },
+
+                    rdo1: {
+                        required: true
+                    }
+
+                },
+                messages: {
+                    rdo1: {
+                        required: "Please select one"
+                    },
+
+                    rdo2: {
+                        required: "Please select one"
+                    },
+
+                    rdo3: {
+                        required: "Please select one"
+                    },
+
+                    rdo4: {
+                        required: "Please select one"
+                    },
+
+                    rdo5: {
+                        required: "Please select one"
+                    },
+
+
+                }
+            });
+        });
+</script>
+
+
+
+
+@using (Html.BeginForm("GiveFeedback", "Employee", FormMethod.Post, new { @id = "surveyForm" }))
+{
+    <table align="center">
+        <tr><td><p style="color:steelblue">Your FeedbackForm For Course @Session["CourseID"] </p></td></tr>
+        <tr><td>1.Participation and interaction were encourged</td><td><label class="error" for="rdo1"></label></td></tr>
+        <tr><td>@Html.RadioButton("rdo1", "1") Strongly Disagree @Html.RadioButton("rdo1", "2") Disagree @Html.RadioButton("rdo1", "3") Neutral @Html.RadioButton("rdo1", "4") Agree @Html.RadioButton("rdo1", "5") Strongly Agree</td></tr>
+        <tr><td>2.The content was organized and easy to follow</td><td><label class="error" for="rdo2"></label></td></tr>
+        <tr><td>@Html.RadioButton("rdo2", "1") Strongly Disagree @Html.RadioButton("rdo2", "2") Disagree @Html.RadioButton("rdo2", "3") Neutral @Html.RadioButton("rdo2", "4") Agree @Html.RadioButton("rdo2", "5") Strongly Agree </td></tr>
+        <tr><td>3.The trainer was knowledgeable about topics</td><td><label class="error" for="rdo3"></label></td></tr>
+        <tr><td>@Html.RadioButton("rdo3", "1") Strongly Disagree @Html.RadioButton("rdo3", "2") Disagree @Html.RadioButton("rdo3", "3") Neutral @Html.RadioButton("rdo3", "4") Agree @Html.RadioButton("rdo3", "5") Strongly Agree </td></tr>
+        <tr><td>4.The trainer was well prepared</td><td><label class="error" for="rdo4"></label></td></tr>
+        <tr><td>@Html.RadioButton("rdo4", "1") Strongly Disagree @Html.RadioButton("rdo4", "2") Disagree @Html.RadioButton("rdo4", "3") Neutral @Html.RadioButton("rdo4", "4") Agree @Html.RadioButton("rdo4", "5") Strongly Agree </td></tr>
+        <tr><td>5.The training objectives were met</td><td><label class="error" for="rdo5"></label></td></tr>
+        <tr><td>@Html.RadioButton("rdo5", "1") Strongly Disagree @Html.RadioButton("rdo5", "2") Disagree @Html.RadioButton("rdo5", "3") Neutral @Html.RadioButton("rdo5", "4") Agree @Html.RadioButton("rdo5", "5") Strongly Agree </td></tr>
+        <tr><td><input type="submit" value="Submit" name="btn" class="btn btn-primary my-btn" /></td></tr>
+    </table>
+
+
+}

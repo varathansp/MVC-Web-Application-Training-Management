@@ -1,0 +1,176 @@
+﻿
+
+
+
+@{
+    Layout = "~/Views/Shared/_LoginTemplate2.cshtml";
+    // Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <style>
+        table {
+            color: #ffffff;
+            border-collapse: collapse;
+        }
+
+        td {
+            color: #ffffff;
+            padding-top: .5em;
+            padding-bottom: .5em;
+        }
+
+        body {
+            color: #ffffff;
+            font-weight: 800;
+        }
+    </style>
+
+
+
+
+
+
+
+    @*<link href="~/Content/LoginCss.css" rel="stylesheet" />*@
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+
+
+
+
+    <script>
+        jQuery.validator.addMethod("lettersonly", function (value) { return /^[A-Z0-9]+$/i.test(value); });
+        $(document).on('keydown', '#txtPassword', function (e) {
+            if (e.keyCode == 32) return false;
+        });
+        $(document).ready(function () {
+            $("#form1").validate({
+                rules: {
+                    txtUserID:
+                     {
+                         required: true,
+                         lettersonly: true,
+                         minlength: 7,
+                         maxlength:10,
+
+                     },
+
+                    txtPassword:
+                        {
+                            required: true,
+                            pwcheck: true,
+                            minlength: 6,
+                            maxlength: 14
+                        },
+
+
+                },
+                messages: {
+
+                    txtUserID:
+                     {
+                         required: "Please enter your user ID",
+                         lettersonly: "Please enter valid ID",
+                         minlength: "Please enter valid ID",
+                         maxlength: "Please enter valid ID"
+                     },
+
+                    txtPassword:
+                        {
+                            required: "Please enter password",
+                            minlength: "Atleast six characters needed",
+                            maxlength: "Should not exceed fourteen characters",
+                            pwcheck: "One uppercase,special character,number is must"
+
+                        },
+
+                },
+                //tooltip_options: {
+                //    txtUserID:{trigger:'focus',placement:right,html:true},
+                //},
+                //submitHandler: function (form) {
+                //    form.submit();
+
+
+            });
+        });
+
+        $.validator.addMethod("pwcheck", function (value) {
+            return /^(?=.*[A-Z])(?=.*\d)(?=.*[$@@$!%*?&])[A-Za-z\d$@@$!%*?&]/.test(value)
+       && /[A-Z]/.test(value)
+       && /\d/.test(value)
+        });
+    </script>
+</head>
+<body>
+
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "form1" }))
+    {
+        <br /><br />
+      
+
+        <h2>App login</h2>
+        <div>
+
+            <table>
+                <tr>
+
+                    <td>User ID*&nbsp;&nbsp;</td>
+                    <td>
+                        @Html.TextBox("txtUserID", null, new { @class = "text-primary" })
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Password*&nbsp;&nbsp;</td>
+                    <td>@Html.Password("txtPassword", null, new { @class = "text-primary" })</td>
+
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Login" name="btn" class="btn btn-primary my-btn"></td>
+                    <td><p style="color:red"> @ViewData["error"]</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ActionLink("Forgot Password?", "ForgotPassword", "Login", new { @class = "btn btn-primary my-btn2" })</td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ActionLink("Register Here", "EmployeeLogin", "Login", new { @class = "btn btn-primary my-btn2" })</td>
+                </tr>
+
+
+            </table>
+        </div>
+
+    }
+
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+        </script>
+    }
+    <div>
+    </div>
+</body>
+</html>
+
+
+
+
+

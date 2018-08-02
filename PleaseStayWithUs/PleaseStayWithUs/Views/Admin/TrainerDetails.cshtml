@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PleaseStayWithUs.Data_Access_Layer.Trainer>
+
+@{
+    ViewBag.Title = "TrainerDetails";
+    Layout = "~/Views/Shared/_AdminTemplate.cshtml";
+}
+
+<h2 align="center">Trainer Details</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainerMail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qualification)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainerMail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qualification)
+        </td>
+       
+    </tr>
+}
+
+</table>

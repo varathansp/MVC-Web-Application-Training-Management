@@ -1,0 +1,249 @@
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\ApplicationInsights.config
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\csc.exe
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\System.Collections.Immutable.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\System.Reflection.Metadata.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\vbc.exe
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\VBCSCompiler.exe
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\VBCSCompiler.exe.config
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\PleaseStayWithUs.dll.config
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\PleaseStayWithUs.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\PleaseStayWithUs.pdb
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Antlr3.Runtime.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\EntityFramework.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\EntityFramework.SqlServer.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.Agent.Intercept.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.DependencyCollector.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.Web.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.WindowsServer.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.ApplicationInsights.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.Core.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Cookies.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Facebook.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Google.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.OAuth.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Twitter.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Web.Infrastructure.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Newtonsoft.Json.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Owin.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\System.Linq.Dynamic.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Helpers.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Mvc.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Optimization.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Razor.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.Deployment.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.Razor.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\WebGrease.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.DependencyCollector.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.Web.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.WindowsServer.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.ApplicationInsights.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Helpers.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Mvc.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Optimization.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Razor.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.Deployment.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.Razor.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Antlr3.Runtime.pdb
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Newtonsoft.Json.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\EntityFramework.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\EntityFramework.SqlServer.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.Core.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Facebook.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Cookies.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.OAuth.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Google.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Twitter.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\obj\Debug\PleaseStayWithUs.dll
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\obj\Debug\PleaseStayWithUs.pdb
+C:\DOTNET\MVC Projects\PleaseStayWithUs\PleaseStayWithUs\obj\Debug\PleaseStayWithUs.csprojResolveAssemblyReference.cache
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\ApplicationInsights.config
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\csc.exe
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\vbc.exe
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\VBCSCompiler.exe
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\PleaseStayWithUs.dll.config
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\PleaseStayWithUs.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\PleaseStayWithUs.pdb
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Antlr3.Runtime.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\EntityFramework.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\EntityFramework.SqlServer.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.Web.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Newtonsoft.Json.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Owin.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\System.Linq.Dynamic.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Helpers.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Mvc.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Optimization.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Razor.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.Razor.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\WebGrease.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.Web.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Helpers.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Mvc.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Optimization.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Razor.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.Razor.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Antlr3.Runtime.pdb
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Newtonsoft.Json.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\EntityFramework.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\EntityFramework.SqlServer.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\obj\Debug\PleaseStayWithUs.dll
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\obj\Debug\PleaseStayWithUs.pdb
+C:\Users\Selvaganapathy.R\Desktop\Project Review\SRC CODE\PleaseStayWithUs\PleaseStayWithUs\obj\Debug\PleaseStayWithUs.csprojResolveAssemblyReference.cache
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\ApplicationInsights.config
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\csc.exe
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\System.Collections.Immutable.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\System.Reflection.Metadata.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\vbc.exe
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\VBCSCompiler.exe
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\roslyn\VBCSCompiler.exe.config
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\PleaseStayWithUs.dll.config
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\PleaseStayWithUs.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\PleaseStayWithUs.pdb
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Antlr3.Runtime.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\EntityFramework.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\EntityFramework.SqlServer.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.DependencyCollector.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.Web.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.WindowsServer.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.ApplicationInsights.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Google.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Web.Infrastructure.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Newtonsoft.Json.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Owin.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\System.Linq.Dynamic.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Helpers.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Mvc.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Optimization.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Razor.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.Deployment.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.Razor.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\WebGrease.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.DependencyCollector.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.Web.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AI.WindowsServer.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.ApplicationInsights.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Helpers.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Mvc.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Optimization.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.Razor.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.Deployment.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\System.Web.WebPages.Razor.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Antlr3.Runtime.pdb
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Newtonsoft.Json.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\EntityFramework.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\EntityFramework.SqlServer.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Google.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\obj\Debug\PleaseStayWithUs.csprojResolveAssemblyReference.cache
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\obj\Debug\PleaseStayWithUs.dll
+E:\Notes\PleaseStayWithUs\PleaseStayWithUs\PleaseStayWithUs\obj\Debug\PleaseStayWithUs.pdb

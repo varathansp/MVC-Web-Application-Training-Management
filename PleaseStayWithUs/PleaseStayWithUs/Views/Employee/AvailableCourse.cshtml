@@ -1,0 +1,94 @@
+﻿@model IEnumerable<PleaseStayWithUs.Data_Access_Layer.Course>
+
+@{
+    ViewBag.Title = "AvailableCourse";
+    Layout = "~/Views/Shared/_EmployeeTemplate.cshtml";
+}
+
+<h2 align="center">Available Courses</h2>
+<style>
+    table {
+        color: #ffffff;
+        border-collapse: collapse;
+    }
+
+    td {
+        color: #ffffff;
+        padding-top: .5em;
+        padding-bottom: .5em;
+    }
+
+    body {
+        color: #ffffff;
+        font-weight: 800;
+    }
+</style>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DomainName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Session)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Trainer.TrainerID)
+        </th>*@
+        <th>Request</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DomainName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Session)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trainer.TrainerName)
+        </td>
+        <td>
+          
+            @Html.ActionLink("Request", "RequestCourse", new { id=item.CourseID ,@class="btn btn-primary my-btn" })
+
+        </td>
+        <td>
+       
+        </td>
+    </tr>
+    <p>@ViewData["exception"]</p>
+}
+
+    
+
+</table>
+
+

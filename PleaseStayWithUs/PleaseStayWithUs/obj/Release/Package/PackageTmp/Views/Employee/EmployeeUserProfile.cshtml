@@ -1,0 +1,104 @@
+﻿@using PleaseStayWithUs.Data_Access_Layer;
+
+@{
+    ViewBag.Title = "EmployeeUserProfile";
+    Layout = "~/Views/Shared/_EmployeeTemplate.cshtml";
+    var details = (Employee)ViewData["EmployeeDetails"];
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <style>
+        td, th {
+            padding-top: 1.3em;
+            padding-bottom: 1.3em;
+        }
+
+        table {
+            font-size: large;
+        }
+    </style>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+</head>
+<body>
+    <h2 align="center">Employee User Profile</h2>
+    @using (Html.BeginForm(null, null))
+    {
+
+
+
+        <table @*class="row"*@  align="center">
+
+            <tr>
+                <td>
+                    Employee ID:
+                </td>
+                <td>
+                    @details.UserID
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    Name:
+                </td>
+                <td>
+                    @details.Name
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    User Name:
+                </td>
+                <td>
+                    @details.UserName
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td>
+                    Email ID:
+                </td>
+                <td>
+                    @details.EmailID
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Manager ID:
+                </td>
+                <td>
+                    MGR @details.MID
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.ActionLink("Change Password?", "EmployeeChangePassword", "Employee")
+                </td>
+
+            </tr>
+
+
+
+
+        </table>
+
+    }
+
+</body>
+</html>
+
+
+
+
+
+

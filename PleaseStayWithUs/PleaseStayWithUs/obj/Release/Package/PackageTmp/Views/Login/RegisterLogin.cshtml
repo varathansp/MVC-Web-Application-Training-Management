@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "RegisterLogin";
+    Layout = "~/Views/Shared/_LoginTemplate2.cshtml";
+    //Layout = null;
+
+
+}
+
+<h3 align="center">You have Registered Successfully</h3>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            padding-top: .5em;
+            padding-bottom: .5em;
+        }
+    </style>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+
+    <script>
+        jQuery.validator.addMethod("lettersonly", function (value) { return /^[A-Z0-9]+$/i.test(value); });
+        $(document).on('keydown', '#txtPassword', function (e) {
+            if (e.keyCode == 32) return false;
+        });
+        $(document).ready(function () {
+            $("#form1").validate({
+                rules: {
+                    txtUserID:
+                     {
+                         required: true,
+                         lettersonly: true,
+                         minlength: 7,
+                         maxlength:10,
+
+                     },
+
+                    txtPassword:
+                        {
+                            required: true,
+                            pwcheck: true,
+                            minlength: 6,
+                            maxlength: 14
+                        },
+
+
+                },
+                messages: {
+
+                    txtUserID:
+                     {
+                         required: "Please enter your User ID",
+                         lettersonly: "Please Enter Valid ID",
+                         minlength: "Please Enter Valid ID",
+                         maxlength: "Please Enter Valid ID"
+                     },
+
+                    txtPassword:
+                        {
+                            required: "Please enter Password",
+                            minlength: "Atleast Six characters needed",
+                            maxlength: "Should not exceed Fourteen characters",
+                            pwcheck: "One uppercase,special character,number is must"
+
+                        },
+
+                },
+                //tooltip_options: {
+                //    txtUserID:{trigger:'focus',placement:right,html:true},
+                //},
+                //submitHandler: function (form) {
+                //    form.submit();
+
+
+            });
+        });
+
+        $.validator.addMethod("pwcheck", function (value) {
+            return /^(?=.*[A-Z])(?=.*\d)(?=.*[$@@$!%*?&])[A-Za-z\d$@@$!%*?&]/.test(value)
+       && /[A-Z]/.test(value)
+       && /\d/.test(value)
+        });
+    </script>
+</head>
+<body>
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "form1" }))
+    {
+        <br /><br />
+       
+
+
+        <h2 align="center">Training App Signin</h2>
+        <div>
+
+            <table style="margin-left:550px">
+                <tr>
+
+                    <td>User ID*&nbsp;&nbsp;</td>
+                    <td>@Html.TextBox("txtUserID", null, new { @class = "text-primary" })</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td>Password*&nbsp;&nbsp;</td>
+                    <td>@Html.Password("txtPassword", null, new { @class = "text-primary" })</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Signin" name="btn" class="btn btn-primary my-btn2" /></td>
+                    <td><p style="color:red"> @ViewData["error"]</p></td>
+                </tr>
+
+
+
+
+            </table>
+        </div>
+
+    }
+    <div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+﻿
+@{
+    ViewBag.Title = "AddTrainer";
+    Layout = "~/Views/Shared/_AdminTemplate.cshtml";
+
+    List<SelectListItem> list = new List<SelectListItem>();
+    list.Add(new SelectListItem { });
+    list.Add(new SelectListItem { Text = "BE/B.Tech", Value = "BE/B.Tech" });
+    list.Add(new SelectListItem { Text = "ME/M.Tech", Value = "ME/M.Tech" });
+    list.Add(new SelectListItem { Text = "MCA", Value = "MCA" });
+    list.Add(new SelectListItem { Text = "MA", Value = "MA" });
+    ViewData["qualification"] = list;
+
+}
+
+<h2 align="center">Add Trainer</h2>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add Trainer</title>
+
+
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <style>
+        table {
+            color: #ffffff;
+            border-collapse: collapse;
+        }
+
+        td {
+            color: #ffffff;
+            padding-top: .5em;
+            padding-bottom: .5em;
+        }
+
+        body {
+            color: #ffffff;
+            font-weight: 800;
+        }
+    </style>
+
+
+
+
+
+
+
+    <script>
+        jQuery.validator.addMethod("lettersonly", function (value) { return /^[A-Za-z']+( [A-Za-z']+)*$/i.test(value); });
+
+        jQuery.validator.addMethod("domain", function (
+         value, element) {
+
+            return this.optional(element) || ['tms.com'].indexOf(value.split('@@').pop()) != -1;
+        });
+
+
+        //jQuery.validator.addMethod("alphanumeric", function (value) { return /^[ A-Za-z0-9]*$/.test(value); });
+        jQuery.validator.addMethod("alphanumeric", function (value) { return /^[T]{1}[R]{1}\d{3}]*$/.test(value); });
+        jQuery.validator.addMethod("mailformat", function (value) { return /^([a-zA-Z0-9_])+\@@(([a-zA-Z0-9]{2,5})+\.)+([a-zA-Z]{3,4})+$/.test(value); });
+
+        $(document).ready(function () {
+            $("#Admin").validate({
+                rules: {
+                   
+
+
+                    txtTrainerName:
+                       {
+                           required: true,
+                           minlength: 4,
+                           maxlength: 20,
+                           lettersonly:true,
+                       },
+
+                    txtTrainerMail:
+                        {
+
+                            required: true,
+                            mailformat:true,
+                            email:true,
+                            domain:true,
+                            maxlength: 20,
+
+                        },
+                    txtQualification:
+                        {
+                            required: true,
+
+                        },
+
+                },
+                messages: {
+                  
+
+                    txtTrainerName:
+                        {
+                            required: "Please enter trainerName",
+                            minlength: "Minimum Four characters needed",
+                            maxlength: "Can't exceed twenty characters",
+                            lettersonly:"Please enter valid name",
+
+                        },
+                    txtTrainerMail:
+                        {
+                            required: "Please enter email",
+                            maxlength: "Cannot exceed 20 characters",
+                            domain: "Format is name@tms.com",
+                            mailformat:"Please enter valid email id ",
+                        },
+                    txtQualification:
+                    {
+                        required: "Please select one qualification",
+
+                    },
+               },
+
+            });
+        });
+
+
+    </script>
+
+
+</head>
+<body>
+
+    @using (Html.BeginForm("AddTrainer", "Admin", FormMethod.Post, new { @id = "Admin" }))
+    {
+
+        <table style="margin-left:500px">
+          
+            <tr>
+                <td>Trainer Name&nbsp;&nbsp;</td>
+                <td>@Html.TextBox("txtTrainerName", null, new { @class = "text-primary" })</td>
+            </tr>
+            <tr>
+                <td>Trainer Mail&nbsp;&nbsp;</td>
+                <td>@Html.TextBox("txtTrainerMail", null, new { @class = "text-primary" })</td>
+            </tr>
+            <tr>
+                <td>Qualification&nbsp;&nbsp;</td>
+                <td>
+                    @Html.DropDownList("txtQualification", ViewData["qualification"] as List<SelectListItem>, new { style = "width:173px;", @class = "text-primary" }
+
+)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="ADD" name="btn" class="btn btn-primary my-btn" /></td>
+                <td><p style="color:red">@ViewData["alertTrainer"]</p><p p style="color:lawngreen">@ViewData["alertTrainer1"]</p> <p>@ViewData["ID"]</p></td>
+            </tr>
+        </table>
+    }
+
+    <div>
+    </div>
+</body>
+</html>
+
+

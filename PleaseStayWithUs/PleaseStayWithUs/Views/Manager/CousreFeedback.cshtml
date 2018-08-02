@@ -1,0 +1,63 @@
+﻿@model IEnumerable<PleaseStayWithUs.Data_Access_Layer.FeedbackList>
+
+@{
+    ViewBag.Title = "CousreFeedback";
+    Layout = "~/Views/Shared/_ManagerTemplate2.cshtml";
+}
+
+<h2 align="center">Course Feedback</h2>
+
+<div>@ViewData["exception"]</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainerName)
+        </th>
+        <th>
+            Rating  @*@Html.DisplayNameFor(model => model.Score)*@
+           
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Score)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+    </tr>
+}
+
+</table>

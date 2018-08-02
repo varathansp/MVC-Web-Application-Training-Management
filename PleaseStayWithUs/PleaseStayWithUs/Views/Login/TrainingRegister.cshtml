@@ -1,0 +1,332 @@
+﻿
+
+
+@{
+    Layout = "~/Views/Shared/_LoginTemplate2.cshtml";
+    //Layout = null;
+    List<SelectListItem> list = new List<SelectListItem>();
+    list.Add(new SelectListItem { });
+    list.Add(new SelectListItem { Text = "What is your favourite movie?", Value = "What is your favourite movie?" });
+    list.Add(new SelectListItem { Text = "What is the name of your first grade teacher?", Value = "What is the name of your first grade teacher?" });
+    list.Add(new SelectListItem { Text = "Who is your favorite actor, musician, or artist?", Value = "Who is your favorite actor, musician, or artist?" });
+    list.Add(new SelectListItem { Text = "What was the make of your first vehicle?", Value = "What was the make of your first vehicle?" });
+    ViewData["Questions"] = list;
+    var message = TempData["Alert"] ?? string.Empty;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RegView</title>
+    <style>
+        table {
+            color: #ffffff;
+            border-collapse: collapse;
+        }
+
+        td {
+            color: #ffffff;
+            padding-top: .5em;
+            padding-bottom: .5em;
+        }
+
+        body {
+            color: #ffffff;
+            font-weight: 800;
+        }
+    </style>
+
+
+
+
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+
+
+    <script>
+        jQuery.validator.addMethod("lettersonly", function (value) { return /^[a-zA-Z]*$/i.test(value); });
+        jQuery.validator.addMethod("UnameValid", function (value) { return /^([\w-\.]+@@([\w-]+\.)+[\w-])?$/i.test(value); });
+        $(document).on('keydown', '#password', function (e) {
+            if (e.keyCode == 32) return false;
+        });
+        $(document).on('keydown', '#repassword', function (e) {
+            if (e.keyCode == 32) return false;
+        });
+        jQuery.validator.addMethod("mailformat", function (value) { return /^([a-zA-Z0-9_.+-])+\@@(([a-zA-Z0-9]{2,5})+\.)+([a-zA-Z]{3,4})+$/.test(value); });
+
+
+
+        $(document).on('keydown', '#age', function (e) {
+            if (e.keyCode == 32) return false;
+        });
+
+        $(document).ready(function () {
+            $("#register").validate({
+                rules: {
+                    username:
+                        {
+                            required: true,
+                            email:true,
+                            minlength: 7,
+                            maxlength: 10,
+
+
+                        },
+                    name:
+                       {
+                           required: true,
+                           lettersonly: true,
+                           minlength:4,
+                           maxlength:20
+
+                       },
+                    age:
+                      {
+                          required: true,
+                          digits:true,
+                          min: 20,
+                          max: 60,
+                          maxlength:2,
+
+                      },
+                    email:
+                     {
+                         required: true,
+                         mailformat:true,
+                         email:true,
+                    },
+                    Gender:
+                      {
+                          required: true,
+
+                      },
+                    Question:{
+                        required:true,
+                    },
+
+                    answer:
+                      {
+                          required: true,
+                          maxlength:20,
+
+                      },
+
+                    password:
+                       {
+                           required: true,
+                           pwcheck: true,
+                           minlength: 6,
+                           maxlength: 14
+
+                       },
+                    repassword:
+                     {
+                         required: true,
+                         equalTo: "#password",
+
+                     },
+
+                },
+                messages: {
+                    username:
+                        {
+                            required: "Please enter your user name",
+                            UnameValid:"Should be in mailID format",
+                            minlength: "Minimum seven characters needed",
+                            maxlength:"Should not exceed twenty characters"
+                        },
+                    name:
+                        {
+                            required: "Please enter your name",
+                            lettersonly: "Characters Only",
+                            maxlength:"Should be minimum 4 characters",
+                            maxlength:"Should not exceed 20"
+                        },
+                    age:
+                       {
+                           required: "Please enter your age",
+                           digits:"Please Enter Valid Age",
+                           min: "Age should be above 20",
+                           max: "Age should not exceed 60",
+                           maxlength: "Age should be above 20",
+
+
+                       },
+                    email:
+                     {
+                         required: "Please enter Email ID",
+                         mailformat: "Valid email id required",
+                         email: "Please enter email ID",
+                     },
+                    Gender:
+                       {
+                           required: "Please select one",
+                       },
+                    Question:{
+                        required:"Please select anyone "
+                    },
+
+                    answer:
+                   {
+                       required: "Please answer the question",
+                       maxlength:"Cannot excced 20 characters ",
+                   },
+
+                    password:
+                        {
+                            required: "Please enter password",
+                            minlength: "Minimum Six characters needed",
+                            maxlength: "Can't exceed fourteen characters",
+                            pwcheck:"One Uppercase,special character,number is must"
+
+                        },
+                    repassword:
+                    {
+                       required: "Please re enter password",
+                        equalTo: "Password not matching"
+                    },
+               },
+
+            });
+        });
+
+        $.validator.addMethod("pwcheck", function(value) {
+            return /^(?=.*[A-Z])(?=.*\d)(?=.*[$@@$!%*?&])[A-Za-z\d$@@$!%*?&]/.test(value)
+       && /[A-Z]/.test(value)
+       && /\d/.test(value)
+
+
+
+});
+    </script>
+
+
+
+
+
+
+</head>
+
+<body>
+
+    <h2 align="center">Registration</h2>
+    @using (Html.BeginForm("TrainingRegister", "Login", FormMethod.Post, new { @id = "register" }))
+    {
+
+        <table style="margin-left:550px">
+
+
+
+
+            <tr>
+                <td>
+                    Name:&nbsp;&nbsp;
+                </td>
+                <td>
+                    @Html.TextBox("name", null, new { @class = "text-primary" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Age:&nbsp;&nbsp;
+                </td>
+                <td>
+
+                    @Html.TextBox("age", null, new { @class = "text-primary" })
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    Gender:&nbsp;&nbsp;
+                </td>
+                <td>
+                    Male:   @Html.RadioButton("Gender", "Male") Female: @Html.RadioButton("Gender", "Female") <label class="error" for="Gender"></label>
+
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    Email ID:&nbsp;&nbsp;
+                </td>
+                <td>
+                    @Html.TextBox("email", null, new { @class = "text-primary" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    User ID:&nbsp;&nbsp;
+                </td>
+                <td>
+                    @Session["RUUserID"] [Please note down for Login]
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Password*:&nbsp;&nbsp;
+                </td>
+                <td>
+                    @Html.Password("password", null, new { @class = "text-primary" })
+                </td>
+                <td>
+
+
+            </tr>
+            <tr>
+                <td>
+                    Confirm Password*:&nbsp;&nbsp;
+                </td>
+                <td>
+                    @Html.Password("repassword", null, new { @class = "text-primary" })
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    Security Questions:&nbsp;&nbsp;
+                </td>
+                <td>@Html.DropDownList("Question", ViewData["SecurityQuestionDDL"] as List<SelectListItem>, new { style = "width:160px;", @class = "text-primary" })</td>
+
+
+            </tr>
+
+            <tr>
+            <tr>
+                <td>
+                    Answer*:&nbsp;&nbsp;
+                </td>
+                <td>
+                    @Html.TextBox("answer", null, new { @class = "text-primary" })
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="REGISTER" name="btn" class="btn btn-primary my-btn" />
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    }
+
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+        </script>
+    }
+</body>
+</html>
+
+
+

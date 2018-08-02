@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewBag.Title = "EmployeeLogin";
+    Layout = "~/Views/Shared/_LoginTemplate2.cshtml";
+    //Layout = null;
+    List<SelectListItem> list = new List<SelectListItem>();
+    list.Add(new SelectListItem { });
+    list.Add(new SelectListItem { Text = "What is your favorite movie?", Value = "What is your favorite movie?" });
+    list.Add(new SelectListItem { Text = "What is the name of your first grade teacher?", Value = "What is the name of your first grade teacher?" });
+    list.Add(new SelectListItem { Text = "Who is your favorite actor, musician, or artist?", Value = "Who is your favorite actor, musician, or artist?" });
+    list.Add(new SelectListItem { Text = "What was the make of your first vehicle?", Value = "What was the make of your first vehicle?" });
+    ViewData["Questions"] = list;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            padding-top: .5em;
+            padding-bottom: .5em;
+        }
+    </style>
+
+    <script src="~/Content/Template/js/jquery.1.11.1.js"></script>
+
+    <script src="~/Content/Template/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+
+
+    <script>
+        jQuery.validator.addMethod("lettersonly", function (value) { return /^[A-z" "]+$/i.test(value); });
+        //jQuery.validator.addMethod("UnameValid", function (value) { return /^([\w-\.]+@@([\w-]+\.)+[\w-])?$/i.test(value); });
+        $(document).on('keydown', '#password', function (e) {
+            if (e.keyCode == 32) return false;
+        });
+        $(document).ready(function () {
+            function disableBack() { window.history.forward() }
+
+            window.onload = disableBack();
+            window.onpageshow = function (evt) { if (evt.persisted) disableBack() }
+
+
+
+            $("#register").validate({
+                rules: {
+                    username:
+                        {
+                            required: true,
+                            //email:true,
+                           maxlength: 20,
+
+
+                        },
+
+                    password:
+                        {
+                            required: true,
+                            //pwcheck: true,
+                            //minlength: 6,
+                            //maxlength:14
+
+
+                        },
+
+
+                },
+                messages: {
+                    username:
+                        {
+                            required: "Please enter your username",
+                           // UnameValid:"Should be in Email format",
+
+                            maxlength:"Should not exceed twenty characters"
+                        },
+
+                    password:
+                        {
+                            required: "Please enter Password",
+                            //minlength: "Minimum Six character",
+                            //maxlength: "Can't exceed Fourteen character",
+                            //pwcheck: "One uppercase,special character,number is must"
+
+
+                        },
+
+               },
+
+            });
+        });
+
+//        $.validator.addMethod("pwcheck", function(value) {
+//            return /^(?=.*[A-Z])(?=.*\d)(?=.*[$@@$!%*?&])[A-Za-z\d$@@$!%*?&]/.test(value)
+//       && /[A-Z]/.test(value)
+//       && /\d/.test(value)
+
+
+
+//});
+    </script>
+</head>
+<body>
+   
+    <h2 align="center">Login to Register</h2>
+
+    @using (Html.BeginForm("EmployeeLogin", "Login", FormMethod.Post, new { @id = "register" }))
+    {
+
+        <table style="margin-left:550px">
+
+            <tr>
+                <td>
+                    Username*:&nbsp;&nbsp;
+                </td>
+                <td>
+                    @Html.TextBox("username", null, new { @class = "text-primary" })
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    Password*:&nbsp;&nbsp;
+                </td>
+                <td>
+                    @Html.Password("password", null, new { @class = "text-primary" })
+                </td>
+
+            </tr>
+
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="SignIn" name="btn" class="btn btn-primary my-btn" />
+                </td>
+                <td><p style="color:red"> @ViewData["Error"]</p></td>
+            </tr>
+        </table>
+    }
+
+</body>
+</html>

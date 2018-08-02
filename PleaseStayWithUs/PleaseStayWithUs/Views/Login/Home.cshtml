@@ -1,0 +1,210 @@
+﻿@model List<PleaseStayWithUs.Data_Access_Layer.Course>
+
+@{
+    ViewBag.Title = "CousreList";
+    Layout = "~/Views/Shared/_LoginTemplate2.cshtml";
+    var grid = new WebGrid(canPage: true, rowsPerPage: 5);
+    grid.Bind(source: Model, rowCount: ViewBag.TotalRows, autoSortAndPage: false);
+}
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            padding-top: .5em;
+            padding-bottom: .5em;
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .webGrid {
+            margin-top:0px;
+            margin-left:100px;
+            margin-right:0px;
+        }
+    </style>
+    <script>
+        jQuery.validator.addMethod("lettersonly", function (value) { return /^[A-Z0-9]+$/i.test(value); });
+        $(document).on('keydown', '#txtPassword', function (e) {
+            if (e.keyCode == 32) return false;
+        });
+        $(document).ready(function () {
+            $("#form1").validate({
+                rules: {
+                    txtUserID:
+                     {
+                         required: true,
+                         lettersonly: true,
+                         minlength: 7,
+                         maxlength:10,
+
+                     },
+
+                    txtPassword:
+                        {
+                            required: true,
+                            pwcheck: true,
+                            minlength: 6,
+                            maxlength: 14
+                        },
+
+
+                },
+                messages: {
+
+                    txtUserID:
+                     {
+                         required: "Please enter your User ID",
+                         lettersonly: "Please Enter Valid ID",
+                         minlength: "Please Enter Valid ID",
+                         maxlength: "Please Enter Valid ID"
+                     },
+
+                    txtPassword:
+                        {
+                            required: "Please enter Password",
+                            minlength: "Atleast Six characters needed",
+                            maxlength: "Should not exceed Fourteen characters",
+                            pwcheck: "One uppercase,special character,number is must"
+
+                        },
+
+                },
+                //tooltip_options: {
+                //    txtUserID:{trigger:'focus',placement:right,html:true},
+                //},
+                //submitHandler: function (form) {
+                //    form.submit();
+
+
+            });
+        });
+
+        $.validator.addMethod("pwcheck", function (value) {
+            return /^(?=.*[A-Z])(?=.*\d)(?=.*[$@@$!%*?&])[A-Za-z\d$@@$!%*?&]/.test(value)
+       && /[A-Z]/.test(value)
+       && /\d/.test(value)
+        });
+    </script>
+    <script>
+        $(function () {
+            try
+            {
+                var dir = $('#dir').val();
+                var col = $('#col').val();
+                var header = $("th a[href=" + col + "] ");
+                if(dir=="Ascending"){
+                    header.text(header.text()+"3")
+                }
+                if (dir == "Descending") {
+                    header.text(header.text() - "2"); }
+            }
+
+            catch (e)
+            { }
+        })
+    </script>
+</head>
+<body>
+
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "form1" }))
+    {
+        <br /><br />
+       
+
+    
+        <div>
+
+            <table align="left">
+                <tr>
+
+                    <td>User ID*&nbsp;&nbsp;</td>
+                    <td>
+                        @Html.TextBox("txtUserID", null, new { @class = "text-primary" })
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Password*&nbsp;&nbsp;</td>
+                    <td>@Html.Password("txtPassword", null, new { @class = "text-primary" })</td>
+
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Login" name="btn" class="btn btn-primary my-btn"></td>
+                    <td><p style="color:red"> @ViewData["error"]</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ActionLink("Forgot Password?", "ForgotPassword", "Login", new { @class = "btn btn-primary my-btn2" })</td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ActionLink("Register Here", "EmployeeLogin", "Login", new { @class = "btn btn-primary my-btn2" })</td>
+                </tr>
+
+
+            </table>
+        </div>
+
+    }
+    <div class="container">
+   
+        <nav class="navbar webGrid"  >
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand"></a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    @using (Html.BeginForm("CourseList", "Login", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
+                    {
+                        <div class="form-group">
+                            <input type="text" value="@ViewBag.search" class="form-control" placeholder="search" />
+                        </div>
+                        <input type="submit" value="Search" class="btn btn-success" />
+                    }
+                </div>
+            </div>
+        </nav>
+        <div>Search</div>
+        <div class="webGrid">
+            @grid.Table(
+tableStyle: "table table-responsive",
+columns: grid.Columns(
+grid.Column(columnName: "CourseID", header: "CourseID"),
+grid.Column(columnName: "CourseName", header: "Course Name"),
+grid.Column(columnName: "DomainName", header: "Domain Name"),
+grid.Column(columnName: "StartDate", header: "Start Date"),
+grid.Column(columnName: "Enddate", header: "End Date")
+)
+
+)
+
+            <div class="row">
+                <div class="col-sm-6">
+                    @grid.PagerList(mode: WebGridPagerModes.All, paginationStyle: "pagination pagination-small pagination-right")
+                </div>
+            </div>
+            @Html.Hidden("dir", grid.SortDirection)
+            @Html.Hidden("col", grid.SortColumn)
+        </div>
+    </div>
+</body>
+</html>

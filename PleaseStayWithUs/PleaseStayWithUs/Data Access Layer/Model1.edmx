@@ -1,0 +1,749 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TrainingManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="AdminName" Type="varchar" MaxLength="20" />
+          <Property Name="AdminMail" Type="varchar" MaxLength="20" />
+          <Property Name="AdminPassword" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="CourseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourseName" Type="varchar" MaxLength="20" />
+          <Property Name="DomainName" Type="varchar" MaxLength="20" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="Session" Type="varchar" MaxLength="20" />
+          <Property Name="TrainerID" Type="int" />
+        </EntityType>
+        <EntityType Name="Domain">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DomainName" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EID" />
+          </Key>
+          <Property Name="EID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="varchar" MaxLength="23" StoreGeneratedPattern="Computed" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Gender" Type="varchar" MaxLength="20" />
+          <Property Name="EmailID" Type="varchar" MaxLength="20" />
+          <Property Name="Pwd" Type="varchar" MaxLength="20" />
+          <Property Name="SecurityQuestion" Type="varchar" MaxLength="50" />
+          <Property Name="Answer" Type="varchar" MaxLength="50" />
+          <Property Name="Designation" Type="varchar" MaxLength="20" />
+          <Property Name="UserName" Type="varchar" MaxLength="20" />
+          <Property Name="MID" Type="int" />
+        </EntityType>
+        <EntityType Name="Feedback">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" Nullable="false" />
+          <Property Name="CourseID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" />
+          <Property Name="ManagerID" Type="int" />
+          <Property Name="TrainerID" Type="int" />
+          <Property Name="Score" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Pwd" Type="varchar" MaxLength="20" />
+          <Property Name="Designation" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Manager">
+          <Key>
+            <PropertyRef Name="MID" />
+          </Key>
+          <Property Name="MID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ManagerUserID" Type="varchar" MaxLength="23" StoreGeneratedPattern="Computed" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Gender" Type="varchar" MaxLength="20" />
+          <Property Name="EmailID" Type="varchar" MaxLength="20" />
+          <Property Name="Pwd" Type="varchar" MaxLength="20" />
+          <Property Name="SecurityQuestion" Type="varchar" MaxLength="50" />
+          <Property Name="Designation" Type="varchar" MaxLength="20" />
+          <Property Name="Answer" Type="varchar" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="RequestID" />
+          </Key>
+          <Property Name="RequestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" />
+          <Property Name="ManagerID" Type="int" />
+          <Property Name="CourseID" Type="int" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="Session" Type="varchar" MaxLength="20" />
+          <Property Name="CourseName" Type="varchar" MaxLength="20" />
+          <Property Name="Status" Type="varchar" MaxLength="20" />
+          <Property Name="Reason" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="SecurityQuestion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Question" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Trainer">
+          <Key>
+            <PropertyRef Name="TrainerID" />
+          </Key>
+          <Property Name="TrainerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TrainerName" Type="varchar" MaxLength="20" />
+          <Property Name="TrainerMail" Type="varchar" MaxLength="30" />
+          <Property Name="Qualification" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK__Course__TrainerI__2EA5EC27">
+          <End Role="Trainer" Type="Self.Trainer" Multiplicity="0..1" />
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trainer">
+              <PropertyRef Name="TrainerID" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="TrainerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employee__MID__1DB06A4F">
+          <End Role="Manager" Type="Self.Manager" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manager">
+              <PropertyRef Name="MID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="MID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employee__UserNa__1CBC4616">
+          <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="UserName" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="UserName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Feedback__Course__3B0BC30C">
+          <End Role="Course" Type="Self.Course" Multiplicity="1" />
+          <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CourseID" />
+            </Principal>
+            <Dependent Role="Feedback">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Feedback__Employ__3BFFE745">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EID" />
+            </Principal>
+            <Dependent Role="Feedback">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Feedback__Manage__3CF40B7E">
+          <End Role="Manager" Type="Self.Manager" Multiplicity="0..1" />
+          <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manager">
+              <PropertyRef Name="MID" />
+            </Principal>
+            <Dependent Role="Feedback">
+              <PropertyRef Name="ManagerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Manager__UserNam__19DFD96B">
+          <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+          <End Role="Manager" Type="Self.Manager" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="UserName" />
+            </Principal>
+            <Dependent Role="Manager">
+              <PropertyRef Name="UserName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Request__CourseI__382F5661">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CourseID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Request__Employe__36470DEF">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Request__Manager__373B3228">
+          <End Role="Manager" Type="Self.Manager" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manager">
+              <PropertyRef Name="MID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="ManagerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TrainingManagementModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Domain" EntityType="Self.Domain" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Manager" EntityType="Self.Manager" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SecurityQuestion" EntityType="Self.SecurityQuestion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Trainer" EntityType="Self.Trainer" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Course__TrainerI__2EA5EC27" Association="Self.FK__Course__TrainerI__2EA5EC27">
+            <End Role="Trainer" EntitySet="Trainer" />
+            <End Role="Course" EntitySet="Course" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employee__MID__1DB06A4F" Association="Self.FK__Employee__MID__1DB06A4F">
+            <End Role="Manager" EntitySet="Manager" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employee__UserNa__1CBC4616" Association="Self.FK__Employee__UserNa__1CBC4616">
+            <End Role="Login" EntitySet="Login" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Feedback__Course__3B0BC30C" Association="Self.FK__Feedback__Course__3B0BC30C">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="Feedback" EntitySet="Feedback" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Feedback__Employ__3BFFE745" Association="Self.FK__Feedback__Employ__3BFFE745">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Feedback" EntitySet="Feedback" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Feedback__Manage__3CF40B7E" Association="Self.FK__Feedback__Manage__3CF40B7E">
+            <End Role="Manager" EntitySet="Manager" />
+            <End Role="Feedback" EntitySet="Feedback" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Manager__UserNam__19DFD96B" Association="Self.FK__Manager__UserNam__19DFD96B">
+            <End Role="Login" EntitySet="Login" />
+            <End Role="Manager" EntitySet="Manager" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Request__CourseI__382F5661" Association="Self.FK__Request__CourseI__382F5661">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Request__Employe__36470DEF" Association="Self.FK__Request__Employe__36470DEF">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Request__Manager__373B3228" Association="Self.FK__Request__Manager__373B3228">
+            <End Role="Manager" EntitySet="Manager" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TrainingManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AdminName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AdminMail" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AdminPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="CourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourseName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DomainName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="Session" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TrainerID" Type="Int32" />
+          <NavigationProperty Name="Trainer" Relationship="Self.FK__Course__TrainerI__2EA5EC27" FromRole="Course" ToRole="Trainer" />
+          <NavigationProperty Name="Feedbacks" Relationship="Self.FK__Feedback__Course__3B0BC30C" FromRole="Course" ToRole="Feedback" />
+          <NavigationProperty Name="Requests" Relationship="Self.FK__Request__CourseI__382F5661" FromRole="Course" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="Domain">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DomainName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EID" />
+          </Key>
+          <Property Name="EID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="String" MaxLength="23" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Gender" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EmailID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Pwd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SecurityQuestion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Answer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Designation" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MID" Type="Int32" />
+          <NavigationProperty Name="Manager" Relationship="Self.FK__Employee__MID__1DB06A4F" FromRole="Employee" ToRole="Manager" />
+          <NavigationProperty Name="Login" Relationship="Self.FK__Employee__UserNa__1CBC4616" FromRole="Employee" ToRole="Login" />
+          <NavigationProperty Name="Feedbacks" Relationship="Self.FK__Feedback__Employ__3BFFE745" FromRole="Employee" ToRole="Feedback" />
+          <NavigationProperty Name="Requests" Relationship="Self.FK__Request__Employe__36470DEF" FromRole="Employee" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="Feedback">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" />
+          <Property Name="CourseID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int32" />
+          <Property Name="ManagerID" Type="Int32" />
+          <Property Name="TrainerID" Type="Int32" />
+          <Property Name="Score" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Course" Relationship="Self.FK__Feedback__Course__3B0BC30C" FromRole="Feedback" ToRole="Course" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__Feedback__Employ__3BFFE745" FromRole="Feedback" ToRole="Employee" />
+          <NavigationProperty Name="Manager" Relationship="Self.FK__Feedback__Manage__3CF40B7E" FromRole="Feedback" ToRole="Manager" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pwd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Designation" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK__Employee__UserNa__1CBC4616" FromRole="Login" ToRole="Employee" />
+          <NavigationProperty Name="Managers" Relationship="Self.FK__Manager__UserNam__19DFD96B" FromRole="Login" ToRole="Manager" />
+        </EntityType>
+        <EntityType Name="Manager">
+          <Key>
+            <PropertyRef Name="MID" />
+          </Key>
+          <Property Name="MID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ManagerUserID" Type="String" MaxLength="23" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Gender" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EmailID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Pwd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SecurityQuestion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Designation" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Answer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK__Employee__MID__1DB06A4F" FromRole="Manager" ToRole="Employee" />
+          <NavigationProperty Name="Feedbacks" Relationship="Self.FK__Feedback__Manage__3CF40B7E" FromRole="Manager" ToRole="Feedback" />
+          <NavigationProperty Name="Login" Relationship="Self.FK__Manager__UserNam__19DFD96B" FromRole="Manager" ToRole="Login" />
+          <NavigationProperty Name="Requests" Relationship="Self.FK__Request__Manager__373B3228" FromRole="Manager" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="RequestID" />
+          </Key>
+          <Property Name="RequestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeID" Type="Int32" />
+          <Property Name="ManagerID" Type="Int32" />
+          <Property Name="CourseID" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="Session" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CourseName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Reason" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Course" Relationship="Self.FK__Request__CourseI__382F5661" FromRole="Request" ToRole="Course" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__Request__Employe__36470DEF" FromRole="Request" ToRole="Employee" />
+          <NavigationProperty Name="Manager" Relationship="Self.FK__Request__Manager__373B3228" FromRole="Request" ToRole="Manager" />
+        </EntityType>
+        <EntityType Name="SecurityQuestion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Trainer">
+          <Key>
+            <PropertyRef Name="TrainerID" />
+          </Key>
+          <Property Name="TrainerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TrainerName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TrainerMail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Qualification" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Courses" Relationship="Self.FK__Course__TrainerI__2EA5EC27" FromRole="Trainer" ToRole="Course" />
+        </EntityType>
+        <Association Name="FK__Course__TrainerI__2EA5EC27">
+          <End Role="Trainer" Type="Self.Trainer" Multiplicity="0..1" />
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trainer">
+              <PropertyRef Name="TrainerID" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="TrainerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Feedback__Course__3B0BC30C">
+          <End Role="Course" Type="Self.Course" Multiplicity="1" />
+          <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CourseID" />
+            </Principal>
+            <Dependent Role="Feedback">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Request__CourseI__382F5661">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CourseID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employee__MID__1DB06A4F">
+          <End Role="Manager" Type="Self.Manager" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manager">
+              <PropertyRef Name="MID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="MID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employee__UserNa__1CBC4616">
+          <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="UserName" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="UserName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Feedback__Employ__3BFFE745">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EID" />
+            </Principal>
+            <Dependent Role="Feedback">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Request__Employe__36470DEF">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Feedback__Manage__3CF40B7E">
+          <End Role="Manager" Type="Self.Manager" Multiplicity="0..1" />
+          <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manager">
+              <PropertyRef Name="MID" />
+            </Principal>
+            <Dependent Role="Feedback">
+              <PropertyRef Name="ManagerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Manager__UserNam__19DFD96B">
+          <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+          <End Role="Manager" Type="Self.Manager" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="UserName" />
+            </Principal>
+            <Dependent Role="Manager">
+              <PropertyRef Name="UserName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Request__Manager__373B3228">
+          <End Role="Manager" Type="Self.Manager" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manager">
+              <PropertyRef Name="MID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="ManagerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TrainingManagementEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="Courses" EntityType="Self.Course" />
+          <EntitySet Name="Domains" EntityType="Self.Domain" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Feedbacks" EntityType="Self.Feedback" />
+          <EntitySet Name="Logins" EntityType="Self.Login" />
+          <EntitySet Name="Managers" EntityType="Self.Manager" />
+          <EntitySet Name="Requests" EntityType="Self.Request" />
+          <EntitySet Name="SecurityQuestions" EntityType="Self.SecurityQuestion" />
+          <EntitySet Name="Trainers" EntityType="Self.Trainer" />
+          <AssociationSet Name="FK__Course__TrainerI__2EA5EC27" Association="Self.FK__Course__TrainerI__2EA5EC27">
+            <End Role="Trainer" EntitySet="Trainers" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Feedback__Course__3B0BC30C" Association="Self.FK__Feedback__Course__3B0BC30C">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="Feedback" EntitySet="Feedbacks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Request__CourseI__382F5661" Association="Self.FK__Request__CourseI__382F5661">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="Request" EntitySet="Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employee__MID__1DB06A4F" Association="Self.FK__Employee__MID__1DB06A4F">
+            <End Role="Manager" EntitySet="Managers" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employee__UserNa__1CBC4616" Association="Self.FK__Employee__UserNa__1CBC4616">
+            <End Role="Login" EntitySet="Logins" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Feedback__Employ__3BFFE745" Association="Self.FK__Feedback__Employ__3BFFE745">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Feedback" EntitySet="Feedbacks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Request__Employe__36470DEF" Association="Self.FK__Request__Employe__36470DEF">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Request" EntitySet="Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Feedback__Manage__3CF40B7E" Association="Self.FK__Feedback__Manage__3CF40B7E">
+            <End Role="Manager" EntitySet="Managers" />
+            <End Role="Feedback" EntitySet="Feedbacks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Manager__UserNam__19DFD96B" Association="Self.FK__Manager__UserNam__19DFD96B">
+            <End Role="Login" EntitySet="Logins" />
+            <End Role="Manager" EntitySet="Managers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Request__Manager__373B3228" Association="Self.FK__Request__Manager__373B3228">
+            <End Role="Manager" EntitySet="Managers" />
+            <End Role="Request" EntitySet="Requests" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TrainingManagementModelStoreContainer" CdmEntityContainer="TrainingManagementEntities1">
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="TrainingManagementModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+                <ScalarProperty Name="AdminMail" ColumnName="AdminMail" />
+                <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="TrainingManagementModel.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="DomainName" ColumnName="DomainName" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Session" ColumnName="Session" />
+                <ScalarProperty Name="TrainerID" ColumnName="TrainerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Domains">
+            <EntityTypeMapping TypeName="TrainingManagementModel.Domain">
+              <MappingFragment StoreEntitySet="Domain">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DomainName" ColumnName="DomainName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="TrainingManagementModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EID" ColumnName="EID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="SecurityQuestion" ColumnName="SecurityQuestion" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="MID" ColumnName="MID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Feedbacks">
+            <EntityTypeMapping TypeName="TrainingManagementModel.Feedback">
+              <MappingFragment StoreEntitySet="Feedback">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+                <ScalarProperty Name="TrainerID" ColumnName="TrainerID" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="TrainingManagementModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Managers">
+            <EntityTypeMapping TypeName="TrainingManagementModel.Manager">
+              <MappingFragment StoreEntitySet="Manager">
+                <ScalarProperty Name="MID" ColumnName="MID" />
+                <ScalarProperty Name="ManagerUserID" ColumnName="ManagerUserID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="SecurityQuestion" ColumnName="SecurityQuestion" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Requests">
+            <EntityTypeMapping TypeName="TrainingManagementModel.Request">
+              <MappingFragment StoreEntitySet="Request">
+                <ScalarProperty Name="RequestID" ColumnName="RequestID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Session" ColumnName="Session" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecurityQuestions">
+            <EntityTypeMapping TypeName="TrainingManagementModel.SecurityQuestion">
+              <MappingFragment StoreEntitySet="SecurityQuestion">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trainers">
+            <EntityTypeMapping TypeName="TrainingManagementModel.Trainer">
+              <MappingFragment StoreEntitySet="Trainer">
+                <ScalarProperty Name="TrainerID" ColumnName="TrainerID" />
+                <ScalarProperty Name="TrainerName" ColumnName="TrainerName" />
+                <ScalarProperty Name="TrainerMail" ColumnName="TrainerMail" />
+                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

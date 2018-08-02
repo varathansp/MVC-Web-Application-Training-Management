@@ -1,0 +1,92 @@
+﻿@using PleaseStayWithUs.Data_Access_Layer
+
+@{
+    ViewBag.Title = "ManagerProfile";
+    Layout = "~/Views/Shared/_ManagerTemplate2.cshtml";
+    var details = (Manager)ViewData["ManagerDetails"];
+}
+
+
+
+<h2 align="center">Manager Profile</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        td, th {
+            padding-top: 1.3em;
+            padding-bottom: 1.3em;
+        }
+
+        table {
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm("ManagerProfile", "Manager", FormMethod.Post, new { @id = "EmployeeUserProfile" }))
+    {
+        <div>@ViewData["exception"]</div>
+        <table  align="center">
+            <tr>
+                <td>
+                    Manager ID:
+                </td>
+                <td>
+                    @details.ManagerUserID
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    Name:
+                </td>
+                <td>
+                    @details.Name
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    User Name:
+                </td>
+                <td>
+                    @details.UserName
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td>
+                    Email ID:
+                </td>
+                <td>
+                    @details.EmailID
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.ActionLink("Change Password?", "ManagerChangePassword", "Manager")
+                </td>
+
+            </tr>
+            <tr>
+
+                @*<td>
+                    <input type="submit" value="UPDATE" />
+                </td>*@
+                <td></td>
+            </tr>
+
+
+
+        </table>
+
+    }
+
+
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8e0e1253b0f84ed38b7af3d748b7121e" Name="Diagram1">
+        <EntityTypeShape EntityType="TrainingManagementModel.Admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingManagementModel.Course" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingManagementModel.Employee" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingManagementModel.Feedback" Width="1.5" PointX="7.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingManagementModel.Login" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingManagementModel.Manager" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingManagementModel.Request" Width="1.5" PointX="10.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingManagementModel.Trainer" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="TrainingManagementModel.FK__Course__TrainerI__2B0A656D" ManuallyRouted="false" />
+        <AssociationConnector Association="TrainingManagementModel.FK__Feedback__Course__625A9A57" ManuallyRouted="false" />
+        <AssociationConnector Association="TrainingManagementModel.FK__Request__CourseI__55F4C372" ManuallyRouted="false" />
+        <AssociationConnector Association="TrainingManagementModel.FK__Employee__MID__1DB06A4F" ManuallyRouted="false" />
+        <AssociationConnector Association="TrainingManagementModel.FK__Employee__UserNa__1CBC4616" ManuallyRouted="false" />
+        <AssociationConnector Association="TrainingManagementModel.FK__Feedback__Employ__634EBE90" ManuallyRouted="false" />
+        <AssociationConnector Association="TrainingManagementModel.FK__Request__Employe__540C7B00" ManuallyRouted="false" />
+        <AssociationConnector Association="TrainingManagementModel.FK__Feedback__Manage__6442E2C9" ManuallyRouted="false" />
+        <AssociationConnector Association="TrainingManagementModel.FK__Manager__UserNam__19DFD96B" ManuallyRouted="false" />
+        <AssociationConnector Association="TrainingManagementModel.FK__Request__Manager__55009F39" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

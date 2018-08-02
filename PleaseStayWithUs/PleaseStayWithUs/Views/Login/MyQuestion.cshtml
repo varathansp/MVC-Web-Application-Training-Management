@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewBag.Title = "MyQuestion";
+    Layout = "~/Views/Shared/_LoginTemplate2.cshtml";
+}
+
+<h2>MyQuestion</h2>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        table {
+            color: #ffffff;
+            border-collapse: collapse;
+        }
+
+        td {
+            color: #ffffff;
+            padding-top: .5em;
+            padding-bottom: .5em;
+        }
+
+        body {
+            color: #ffffff;
+            font-weight: 800;
+        }
+    </style>
+
+
+
+    <meta name="viewport" content="width=device-width" />
+    <title>ForgotPassword</title>
+    <style type="text/css"></style>
+    <link href="~/Content/text.css" rel="stylesheet" />
+    <link href="~/Content/LoginCss.css" rel="stylesheet" />
+    @*<style>
+
+                div#fixedfooter {
+            position:absolute;
+            bottom:0px;
+            /*left:0px;*/
+            width:100%;
+            color:white;
+            background-color:#000080;
+        }
+        div#fixedheader {
+            position:fixed;
+            top:0px;
+            left:0px;
+            width:100%;
+            color:white;
+            padding:2px;
+
+            background-color:#000080;
+            /*padding:10px;*/
+        }
+            </style>*@
+    <link href="~/Content/LoginCss.css" rel="stylesheet" />
+    <script lang="javascript" type="text/javascript"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+
+
+    <script>
+        //jQuery.validator.addMethod("lettersonly", function (value) { return /^[]+$/i.test(value); });
+
+    $(document).ready(function () {
+    $("#Forgot").validate({
+    rules: {
+    Question:
+    {
+    required: true,
+    },
+    Answer:
+    {
+        required: true,
+        maxlength:20,
+
+    },
+    txtUserID:
+{
+    required: true,
+    
+},
+
+
+    },
+    messages: {
+        Question:
+    {
+    required: "Please Select One",
+
+    },
+    Answer:
+    {
+        required: "Please Answer the Question",
+        maxlength:"Cannot exceed more than 20 characters",
+
+
+    },
+    txtUserID:
+        {
+            required: "Please enter  your user ID",
+            lettersonly: "Please enter valid ID",
+            minlength: "Please enter valid ID",
+            maxlength: "Please enter valid ID"
+        },
+
+    },
+
+
+    });
+    });</script>
+</head>
+<body>
+
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "Forgot" }))
+    {
+
+
+        <h2 align="center" >Forgot Password</h2>
+
+        <table style="margin-left:550px">
+            <tr>
+                <td>
+                    <p>User ID&nbsp;&nbsp;</p>
+                </td>
+                <td>
+
+
+                    @Html.TextBox("txtUserID", null, new { @class = "text-primary" })
+                </td></tr>
+            <tr><td></td>
+             <td>  <input type="submit" value="MyQuestion" name="btn" class="btn btn-primary my-btn" /></td><td>@ViewData["exception"]</td>
+             
+            </tr>
+           
+        </table>
+    }
+
+    <div>
+
+    </div>
+
+
+
+
+</body>
+</html>
+

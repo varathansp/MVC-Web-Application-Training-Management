@@ -1,0 +1,72 @@
+﻿@model IEnumerable<PleaseStayWithUs.Data_Access_Layer.Request>
+
+@{
+    ViewBag.Title = "AplliedCourse";
+    Layout = "~/Views/Shared/_EmployeeTemplate.cshtml";
+}
+
+<h2 align="center">Applied Courses</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Course.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Session)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+    
+        <th>
+            Cancel Request
+        </th>
+        
+        
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course.CourseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Session)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.CourseName)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Reason)
+        </td>*@
+      
+      
+        <td>
+            
+            @Html.ActionLink("CancelRequest", "CancelRequest", new { id=item.RequestID }) 
+            
+        </td>
+    </tr>
+}
+
+</table>

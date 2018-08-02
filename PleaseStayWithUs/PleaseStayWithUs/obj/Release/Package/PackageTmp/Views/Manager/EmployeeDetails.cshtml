@@ -1,0 +1,84 @@
+﻿@model List<PleaseStayWithUs.Data_Access_Layer.Employee>
+
+@{
+    ViewBag.Title = "EmployeeDetails";
+    Layout = "~/Views/Shared/_ManagerTemplate.cshtml";
+    var grid = new WebGrid(canPage: true, rowsPerPage: 5);
+    grid.Bind(source: Model, rowCount: ViewBag.TotalRows, autoSortAndPage: false);
+}
+
+<h2 align="center">Employee Details</h2>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script>
+        $(function () {
+            try
+            {
+                var dir = $('#dir').val();
+                var col = $('#col').val();
+                var header = $("th a[href=" + col + "] ");
+                if(dir=="Ascending"){
+                    header.text(header.text()+"3")
+                }
+                if (dir == "Descending") {
+                    header.text(header.text() - "2"); }
+            }
+
+            catch (e)
+            { }
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        
+        
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand"></a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    @using (Html.BeginForm("EmployeeDetails", "Manager", new { @class = "navbar-form navbar-left" }))
+                    {
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="txtsearch" name="txtsearch" placeholder="search" />
+                        </div>
+                        <input type="submit" value="Search" name="Search" class="btn btn-success" />
+                    }
+                </div>
+            </div>
+        
+        <div>
+            @grid.Table(
+tableStyle: "table table-responsive table-bordered",
+columns: grid.Columns(
+grid.Column(columnName: "UserID", header: "Employee ID"),
+grid.Column(columnName: "Name", header: "Employee Name"),
+grid.Column(columnName: "Gender", header: "Employee Gender"),
+grid.Column(columnName: "EmailID", header: "Email ID"),
+grid.Column(columnName: "UserName", header: "User Name")
+)
+
+)
+
+            <div class="row">
+                <div class="col-sm-6">
+                    @grid.PagerList(mode: WebGridPagerModes.All, paginationStyle: "pagination pagination-small pagination-right")
+                </div>
+            </div>
+            @Html.Hidden("dir", grid.SortDirection)
+            @Html.Hidden("col", grid.SortColumn)
+        </div>
+    </div>
+</body>
+</html>
+
